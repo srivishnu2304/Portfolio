@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- PDF and DOCX generation libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/docx@8.5.0/build/index.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#" class="logo">My Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-content">
+        <div class="hero-intro">
+          <span class="hero-greeting">Hello, I'm</span>
+          <h1><span class="accent">Sri Vishnu</span></h1>
+          <h2 class="hero-title">VFX Artist | No Code Automation </h2>
+          <div class="hero-tagline">
+            <span class="typing-text" id="typingText">Animator</span>
+            <span class="typing-cursor">|</span>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects"><span>View My Work</span></a>
+          <a class="btn btn-secondary" href="#contact"><span>Get In Touch</span></a>
+          <div class="resume-download-container">
+            <a class="btn btn-resume" href="#" id="downloadResume"><span>Download Resume</span></a>
+            <select id="resumeFormat" class="resume-format-select">
+              <option value="pdf">PDF</option>
+              <option value="docx">DOCX</option>
+              <option value="txt">TXT</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-container">
+          <div class="profile-bg"></div>
+          <img class="profile" src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001884.png" alt="Sri Vishnu - Full-Stack Developer" />
+          <div class="profile-badge">
+            <span class="badge-text">Available for Work</span>
+          </div>
+        </div>
+        <div class="floating-elements">
+          <div class="floating-icon" style="--delay: 0s;">💻</div>
+          <div class="floating-icon" style="--delay: 1s;">⚡</div>
+          <div class="floating-icon" style="--delay: 2s;">🚀</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="about-content">
+        <p>
+          I’m a hands-on automation enthusiast passionate about building AI-powered workflows that make processes smarter, faster, and more scalable. Over the past months, I’ve designed and implemented end-to-end systems using Make.com, Google Sheets, Gmail, Gemini AI, and Looker Studio, transforming raw data into actionable insights.
+          <br>
+          From resume screening and personalized outreach automation to real-time dashboards with error handling and alerts, I’ve learned how to bridge the gap between manual work and intelligent automation. My focus is always on creating workflows that are practical, reliable, and measurable, with clear KPIs and error-proofing.
+          <br>
+          I enjoy experimenting with AI + automation to solve real-world problems and love documenting my progress in a structured roadmap style. My long-term vision is to keep enhancing these systems with better data pipelines, integrations, and scalable architectures, ultimately helping businesses save time, reduce costs, and make data-driven decisions.
+        </p>
+        <div class="skills">
+          <h3>Skills</h3>
+          <ul class="skills-list">
+            <li><span>Make.com (Integromat) Automation</span></li>
+            <li><span>Google Sheets (Formulas, Data Pipelines)</span></li>
+            <li><span>Google Looker Studio (Dashboards & KPIs)</span></li>
+            <li><span>Gemini AI Integration (Resume Scoring, Email Generation)</span></li>
+            <li><span>Webhook & JSON Parsing</span></li>
+            <li><span>API Integration</span></li>
+            <li><span>Gmail Automation</span></li>
+            <li><span>Error Handling & Logging in Workflows</span></li>
+            <li><span>Recruitment Automation Systems</span></li>
+          </ul>          
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>My Projects</h2>
+        <p>Here are some of my recent work and side projects</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>I'd love to hear from you! Fill out the form below.</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn"><span>Send Message</span></button>
+          </form>
+        </div>
+        
+        <aside class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>srivishnu23042003@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p>+91 8300962214</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h4>Location</h4>
+                <p>Madurai, Tamil Nadu</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+              <a href="https://github.com/srivishnu" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.09 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .85-.28 2.8 1.05a9.4 9.4 0 0 1 2.55-.35c.86 0 1.73.12 2.55.35 1.95-1.33 2.79-1.05 2.79-1.05.56 1.42.21 2.47.11 2.73.64.72 1.03 1.64 1.03 2.76 0 3.96-2.34 4.82-4.57 5.08.36.32.68.95.68 1.93 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/srivishnu" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.94 8.5H3.75V20H6.94V8.5ZM5.35 3.5C4.33 3.5 3.5 4.33 3.5 5.35c0 1.01.83 1.85 1.85 1.85 1.01 0 1.85-.84 1.85-1.85A1.85 1.85 0 0 0 5.35 3.5ZM20.5 20h-3.19v-5.64c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96V20H10.1V8.5h3.06v1.57h.04c.43-.82 1.49-1.68 3.06-1.68 3.27 0 3.88 2.15 3.88 4.95V20Z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/srivishnu" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.5 6.6c-.7.3-1.4.5-2.2.6.8-.5 1.3-1.2 1.6-2.1-.8.5-1.6.8-2.5 1-1.6-1.7-4.5-1.3-5.7.8-.6 1-.6 2.2-.3 3.2-3.3-.2-6.2-1.8-8.2-4.4-1.1 2 0 4.5 2 5.6-.6 0-1.2-.2-1.7-.4 0 2.1 1.4 4 3.5 4.5-.6.2-1.3.2-1.9.1.5 1.7 2.2 3 4.1 3-1.5 1.2-3.3 1.9-5.2 1.9h-.9c1.9 1.2 4.1 2 6.4 2 7.7 0 12-6.7 12-12.4v-.6c.8-.6 1.4-1.2 1.9-2Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small>© <span id="year"></span> Sri Vishnu J C. All rights reserved.</small>
+      <nav class="social" aria-label="Social media">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.09 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .85-.28 2.8 1.05a9.4 9.4 0 0 1 2.55-.35c.86 0 1.73.12 2.55.35 1.95-1.33 2.79-1.05 2.79-1.05.56 1.42.21 2.47.11 2.73.64.72 1.03 1.64 1.03 2.76 0 3.96-2.34 4.82-4.57 5.08.36.32.68.95.68 1.93 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6.94 8.5H3.75V20H6.94V8.5ZM5.35 3.5C4.33 3.5 3.5 4.33 3.5 5.35c0 1.01.83 1.85 1.85 1.85 1.01 0 1.85-.84 1.85-1.85A1.85 1.85 0 0 0 5.35 3.5ZM20.5 20h-3.19v-5.64c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96V20H10.1V8.5h3.06v1.57h.04c.43-.82 1.49-1.68 3.06-1.68 3.27 0 3.88 2.15 3.88 4.95V20Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21.5 6.6c-.7.3-1.4.5-2.2.6.8-.5 1.3-1.2 1.6-2.1-.8.5-1.6.8-2.5 1-1.6-1.7-4.5-1.3-5.7.8-.6 1-.6 2.2-.3 3.2-3.3-.2-6.2-1.8-8.2-4.4-1.1 2 0 4.5 2 5.6-.6 0-1.2-.2-1.7-.4 0 2.1 1.4 4 3.5 4.5-.6.2-1.3.2-1.9.1.5 1.7 2.2 3 4.1 3-1.5 1.2-3.3 1.9-5.2 1.9h-.9c1.9 1.2 4.1 2 6.4 2 7.7 0 12-6.7 12-12.4v-.6c.8-.6 1.4-1.2 1.9-2Z" fill="currentColor"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+
